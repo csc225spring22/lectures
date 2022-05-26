@@ -1,9 +1,17 @@
 #include <stdio.h>
 
+void foo(int *ptr) {
+    *ptr = 5;
+}
+
+void bar(int *ptr) {
+    foo(ptr);
+}
+
 int main(void) {
     int *ptr = NULL;
 
-    *ptr = 5;
+    bar(ptr);
 
     return 0;
 }
